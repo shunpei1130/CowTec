@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CowTech株式会社 - AI・IoT技術の活用</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif JP', serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        header {
+            background: linear-gradient(rgba(53, 66, 74, 0.8), rgba(53, 66, 74, 0.8)), url('/api/placeholder/1920/1080') no-repeat center center/cover;
+            color: #ffffff;
+            padding: 30px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+    background: #35424a;
+    color: #ffffff;
+    padding: 5px 0; /* パディングを減らす */
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    margin: 0; /* マージンを0に設定 */
+}
+
+nav li {
+    display: inline;
+    margin: 0 5px; /* マージンを減らす */
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px; /* フォントサイズを小さくする */
+    padding: 5px 10px; /* パディングを追加してクリック領域を確保 */
+    transition: background-color 0.3s; /* ホバーエフェクトのためのトランジション */
+}
+
+nav a:hover {
+    background-color: #0077be; /* ホバー時の背景色 */
+    border-radius: 3px; /* 角を少し丸くする */
+}
+        .intro {
+            background: #ffffff;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: #0077be 5px solid;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 20px;
+    padding-top: 20px; /* 上部にパディングを追加 */
+    padding-bottom: 20px; /* 下部にパディングを追加 */
+    border-bottom: 2px solid #ddd; /* 下に境界線を追加 */
+}
+
+        .tech-item {
+    background: #ffffff;
+    padding: 15px;
+    
+    border-left: #0077be 5px solid;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* 高さを100%に設定 */
+}
+.tech-item {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.5s ease, transform 0.5s ease;
+}
+
+.tech-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tech-item h3 {
+    color: #0077be;
+    font-size: 1.2em;
+    margin-top: 0;
+}
+
+.tech-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-top: auto; /* 画像を下部に配置 */
+}
+        footer {
+            background: #35424a;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        #fading-text {
+    opacity: 0;
+    transform: translateY(20px); /* 少し下にずらす */
+    transition: opacity 2s ease-out, transform 2s ease-out; /* 2秒かけて表示 */
+}
+
+#fading-text.visible {
+    opacity: 1;
+    transform: translateY(0); /* 元の位置に戻す */
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="service.html">サービス</a></li>
+                <li><a href="technology.html">技術</a></li>
+                <li><a href="company.html">会社案内</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <header>
+        <div class="container">
+            <h1>CowTech株式会社</h1>
+            <p>畜産農家のための東京理科大学発ベンチャー</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="intro">
+            <h2>AI・IoT技術の活用</h2>
+            <p>現在、普及が進んでいるのが、「スマート畜産」として括られるロボット、AI、IoT技術の数々です。農林水産省の「スマート農協技術カタログ」では技術を以下のように分類されています。</p>
+            <ol>
+                <li>センシング・モニタリング：生体データ（繁殖機能や栄養・健康状態等）や飼養環境に関するデータを提供する技術</li>
+                <li>生体データ活用：生体に関するデータをAI等で活用する技術</li>
+                <li>飼養環境データ活用：飼養環境に関するデータをAI等で活用する技術</li>
+                <li>自動運転・作業軽減：：自動運転ロボット等の導入により作業の軽労化を図る技術</li>
+                <li>経営データ管理：経営の現状分析、計画作成、進行管理等を行う技術</li>
+            </ol>
+            <p>当社が提供するサービスは①～⑤の技術を網羅しております。主な適用技術をご紹介いたします。</p>
+        </section>
+
+        <h2>技術一覧</h2>
+        
+        <div class="tech-grid">
+            <div class="tech-item">
+                <h3>画像データ活用技術 （飼養管理高度化）</h3>
+                <p>搾乳ロボットの出口側の柵に設置された金属センサーと出口上部に固定されたカメラを連携することで（固定式）、搾乳が終わった牛を撮影し、BCS判定を行います。現在、最新の軽量カメラを使用することでポータブル化も行いました。また、本システムでは、AIの技術を用いて深度画像から背景を除去することを可能としています。</p>
+                <a href="tec1.html">BCS測定システム</a>
+                <img src="images/technology/1.png" alt="BCS測定システム">
+            </div>
+
+            <div class="tech-item">
+                <h3>活動量計 （飼養管理高度化）</h3>
+                <p>活動量計を牛に装着することで牛の活動量データを取得します。また、この活動量計の番号を認識することで装着している牛の画像に個体情報の表示を可能としました。併せて活動量計からデータを受信する際の電波強度を集約、機械学習することで牛の位置が特定します（特許出願済）。</p>
+                <a href="tec2.html">活動量計</a>
+                <img src="images/technology/2.png" alt="活動量計">
+            </div>
+
+            <div class="tech-item">
+                <h3>AI分析 （飼養管理高度化）</h3>
+                <p>蓄積した活動量データを用いて発情を予測するアルゴリズムを開発しました。機械学習により牛の位置情報を特定する仕組みを構築しました（特許取得）。その他、乳中のデータを基に機械学習を活用して乳房炎発症予測、潜在性ケトーシス発症予測を行います。</p>
+                <a href="tec3.html">AI分析</a>
+                <a href="tec4.html">特許</a>
+                <img src="images/technology/3.png" alt="AI分析 特許">
+            </div>
+
+            <div class="tech-item">
+                <h3>ブロックチェーン （乳牛トレーサビリティ高度化）</h3>
+                <p>牛の取引において、育成農家から搾乳農家へと取引される際、血統や哺乳量等の客観的なデータが関係者間で適切に共有される必要があります。ブロックチェーン技術による子牛・母牛の情報のデータベース化は親和性が非常に高く、取引におけるデータの正当性・一貫性を確保することができます。</p>
+                <img src="images/technology/4.png" alt="ブロックチェーン技術">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright © CowTech Inc. All Rights Reserved.</p>
+    </footer>
+
+    <script>document.addEventListener('DOMContentLoaded', function() {
+        const serviceItems = document.querySelectorAll('.tech-item');
+    
+        function checkVisibility() {
+            serviceItems.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    item.classList.add('visible');
+                }
+            });
+        }
+    
+        window.addEventListener('scroll', checkVisibility);
+    
+        // ページロード時にもチェック
+        checkVisibility();
+    });
+    </script>
+</body>
+</html>

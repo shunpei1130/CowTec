@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活動量計 - 仕様/設置状況</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 1.5em;
+            margin: 0;
+            color: #333;
+        }
+        .section-title {
+            font-size: 1.2em;
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .logo {
+            width: 100px;
+        }
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 1.5em;
+            margin: 0;
+            color: #8B4513;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            margin: 20px 0;
+            align-items: center;
+            justify-content: center;
+        }
+        .grid-container img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #f9f9f9;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #e0e0e0;
+        }
+        .highlight {
+            color: #FF0000;
+        }
+        .status-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .status-list li::before {
+            content: "✓";
+            color: #4CAF50;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .image-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.image-caption {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+}
+.image-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.image-item {
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+}
+
+.image-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    max-width: 400px; /* 画像の最大幅を300pxに統一 */
+    height: 250px; /* 画像の高さを200pxに統一 */
+    object-fit: cover; /* 画像が歪まないように調整 */
+}
+
+.image-caption {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+}
+.back-button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <h1>活動量計（仕様/設置状況）</h1>
+            <button class="back-button" type="button" onclick="history.back()">戻る</button>
+        </div>
+        
+        <h2 class="section-title">現在運用中の端末</h2>
+        <div class="grid-container">
+        <div class="image-grid">
+            <img src="images/tec2/1.png" alt="現在運用中の端末">
+        </div>
+            <div class="text-content">
+                <table>
+                    <tr>
+                        <th>機能</th>
+                        <td>
+                            <ul class="status-list">
+                                <li>活動量データ取得</li>
+                                <li>送信/個体認識のためのQRマーカー</li>
+                                <li>遠隔操作によるLED点灯</li>
+                                <li>1端末で複数の個体を管理</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>電源</th>
+                        <td>電池寿命: 5~7年<br>単3型の電池1本 容量: 5200mAh</td>
+                    </tr>
+                    <tr>
+                        <th>外装</th>
+                        <td>
+                            <ul class="status-list">
+                                <li>LEDの視認性を向上</li>
+                                <li>透明のケースを採用</li>
+                                <li>耐久性を向上させるため、カバーの装着等を実施</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>データ通信</th>
+                        <td>
+                            <ul class="status-list">
+                                <li>データ取得状況をモニタリング</li>
+                                <li>通信状況が悪い場合はレポート</li>
+                                <li>活動量データの通信頻度: 15秒に1度</li>
+                                <li>LED点灯から平均8秒後に点灯</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <h2 class="section-title">設置状況</h2>
+        <div class="text-content">
+            <table>
+                <tr>
+                    <th>装着頭数</th>
+                    <th>データ蓄積状況</th>
+                </tr>
+                <tr>
+                    <td>鹿児島協力農場: 100頭</td>
+                    <td>クラウド・東京理科大学のデータベースに随時蓄積。解析に利用</td>
+                </tr>
+                <tr>
+                    <td>北海道協力農場: <span class="highlight">100頭</span><br>⇒800頭(予定)</td>
+                    <td>農場のPCに保存<br><span class="highlight">⇒クラウド上のデータベースに蓄積</span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>ARマーカー認識アプリケーション</h1>
+        </div>
+    
+        <p>活動量計のARマーカーの番号を認識するアプリケーションを開発した。データベースを参照し、認識されたマーカー（活動量計）を装着した牛の個体情報を表示する。</p>
+    
+        <h2 class="section-title" style="text-align: center;">アプリケーションでのARマーカー認識例</h2>
+        <div class="image-container">
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="images/tec2/2.png" alt="ARマーカー認識例">
+                    <p class="image-caption">ARマーカー認識例</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/tec2/3.png" alt="活動量着用">
+                    <p class="image-caption">活動量着用</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+</body>
+</html>

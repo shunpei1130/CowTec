@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CowTech株式会社 - 飼養管理高度化システム</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+    body {
+        font-family: 'Noto Sans JP', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    h6 {
+        font-size: 1.5em;
+        margin: 0;
+    }
+    
+    .back-button {
+        padding: 10px 20px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .service > div {
+        margin-bottom: 40px;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        display: flex;
+    }
+    
+   /* サービス① 特有のスタイル */
+.service_① {
+    flex-direction: row;
+    align-items: center; /* 垂直方向の中央揃えを追加 */
+}
+
+.service_①-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.service_①-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 垂直方向の中央揃えを追加 */
+    height: 100%; /* 親要素の高さいっぱいに広げる */
+}
+
+.service_① .img-item {
+    max-width: 100%;
+    max-height: 100%; /* 親要素の高さを超えないようにする */
+    height: auto;
+    object-fit: contain;
+}
+
+/* レスポンシブデザインの調整 */
+@media (max-width: 768px) {
+    .service > div, .service_①, .service_② {
+        flex-direction: column;
+    }
+    .service_①-text, .service_②-text, .service_①-image, .service_②-image {
+        padding: 0;
+        width: 100%;
+    }
+    .service_① .img-item, .service_② .img-item, .service_③ .img-item {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+    .service_①-image {
+        height: auto; /* モバイル表示時は高さを自動調整 */
+    }
+}
+    
+    /* サービス② 特有のスタイル */
+    .service_② {
+        flex-direction: row-reverse;
+    }
+    
+    .service_②-text {
+        flex: 4;
+        padding-left: 50px;
+    }
+    
+    .service_②-image {
+        flex: 6;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .service_② .img-item {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* サービス③ はそのまま */
+    .service_③ {
+        flex-direction: column;
+    }
+    
+    .service_③-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .service_③ .img-item {
+        max-width: 80%;
+        height: auto;
+        margin-top: 20px;
+    }
+    
+    #A {
+        font-weight: bold;
+        color: #2c3e50;
+    }
+    
+    #B {
+        margin-left: 20px;
+        color: #34495e;
+    }
+    
+    #C {
+        margin-left: 40px;
+        color: #7f8c8d;
+    }
+    
+    .link-button {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #2ecc71;
+        color: white;
+        text-decoration: none;
+        border-radius: 3px;
+        margin-left: 10px;
+    }
+    
+    @media (max-width: 768px) {
+        .service > div, .service_①, .service_② {
+            flex-direction: column;
+        }
+        .service_①-text, .service_②-text, .service_①-image, .service_②-image {
+            padding: 0;
+            width: 100%;
+        }
+        .service_① .img-item, .service_② .img-item, .service_③ .img-item {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <h6>飼養管理高度化システム</h6>
+            <button class="back-button" type="button" onclick="history.back()">戻る</button>
+        </div>
+        <div class="service">
+            <div class="service_①">
+                <div class="service_①-text">
+                    <p id="A">【４つの事業における研究開発】</p>
+                    <p id="B">① 開発済み IoT デバイス販売・保守のためのさらなる品質・性能向上</p>
+                    <p id="C">⇒ モニター先酪農家でのIoTデバイスの現場実証実験の実施</p>
+                    <p id="B">② AI 技術を使用したビッグデータ解析サービスを24 時間ノンストップで提供</p>
+                    <p id="C">⇒ クラウドおよびオンプレミス上で安定稼働する Web アプリケーション・サービスを開発</p>
+                    <p id="B">③ 酪農家へのアドバイスを行うパッケージソフトウェア開発・販売・保守に向けたユーザビリティの向上</p>
+                    <p id="C">⇒ 酪農現場においてスマホやタブレットで容易に飼養管理が可能（GUIの開発）</p>
+                    <p id="B">④ 飼育管理・繁殖管理・疾病コンサルテーションを支援するコミュニケーションツールの開発と運用</p>
+                    <p id="C">⇒ 遠隔でのコンサルテーションが可能となるようなコミュニケーション API（slack）の活用</p>
+                </div>
+                <div class="service_①-image">
+                    <img src="images/service1/飼養管理高度化_①サービス事業内容.png" alt="飼養管理高度化①" class="img-item">
+                </div>
+            </div>
+            
+            <div class="service_②">
+                <div class="service_②-text">
+                    <p id="A">【サービス利用シーン毎 <br>/ 乳牛ステージ毎に活用した技術】</p>
+                    <p id="B">技術サイトの『AI・IoT技術の活用』</p>
+                    <p id="C">　「BCS測定」<br>　　　　　　　⇒
+                    <a class="link-button" href="tec1.html">BCS測定</a></p>
+                    <p id="C">　「活動量計」<br>　　　　　　　⇒
+                    <a class="link-button" href="tec2.html">活動量計</a></p>
+                    <p id="B">を参照願います。</p> 
+                </div>
+                <div class="service_②-image">
+                    <img src="images/service1/飼養管理高度化_②サービス利用シーンごとの特徴.png" alt="飼養管理高度化②" class="img-item">
+                </div>
+            </div>
+            
+            <div class="service_③">
+                <div class="service_③-text">
+                    <!-- ここに必要なテキストを追加 -->
+                </div>
+                <div class="service_③-image">
+                    <img src="images/service1/飼養管理高度化_③ステージ毎の利用.png" alt="飼養管理高度化③" class="img-item">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI分析 - 行動データを用いた発情予測</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .fade-text {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .fade-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+         .back-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        body {
+            font-family: 'Noto Serif JP', serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 90%;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px; /* 各子要素間の隙間を設定 */
+        }
+        h1 {
+            font-size: 2em;
+            color: #0077be;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: #0077be;
+            border-bottom: 2px solid #0077be;
+            padding-bottom: 10px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+        .table-container {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.section h3 {
+    font-size: 1.5em;
+    color: #0077be;
+    margin-bottom: 10px;
+}
+
+.section p {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.image-container {
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 5px;
+    background-color: #f9f9f9;
+}
+
+.two-column-section {
+    display: flex;
+    gap: 20px; /* 左右のカラムの間隔 */
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.left-column, .right-column {
+    width: 50%; /* 各カラムの幅を50%に */
+}
+.left-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* 上寄せに変更 */
+    gap: 20px; /* テキストと画像の間にスペースを追加 */
+}
+
+
+
+.text-container {
+    margin-bottom: 20px;
+}
+
+.image-container {
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 5px;
+    background-color: #f9f9f9;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center;">AIの活用 (AI分析)</h1>
+    <a href="javascript:history.back()" class="back-button">戻る</a>
+
+    <div class="container">
+        <div class="section fade-text">
+        <h2>行動データを用いた発情予測</h2>
+        <ul>
+            <li>蓄積した活動量データを用いて、発情を予測するアルゴリズムを開発した。</li>
+            <li>乳牛の前後方向加速度の分散が"10時間平均7日間平均2閾値"を満たすとき（グラフのピンク線より上のとき）、"発情"と予測する。</li>
+            <li>発情予測を基に、オンライン上で閲覧できる発情関連情報レポートを、定期的に自動生成する仕組みを構築した。</li>
+        </ul>
+
+        <div class="image-container">
+            <img src="images/tec3/1.png" alt="発情予測の例">
+        </div>
+
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>指標</th>
+                    <th>値</th>
+                </tr>
+                <tr>
+                    <td>適合率</td>
+                    <td>0.81</td>
+                </tr>
+                <tr>
+                    <td>再現率</td>
+                    <td>0.70</td>
+                </tr>
+                <tr>
+                    <td>F値</td>
+                    <td>0.75</td>
+                </tr>
+            </table>
+        </div>
+</div>
+
+        
+        <div class="section fade-text">
+            <h2>発情予測レポート例</h2>
+        <div class="two-column-section">
+            <div class="left-column">
+                <div class="text-container">
+                    <p>＜発情予測レポート例＞</p>
+                    <p>（左：一覧、右：個体情報）</p>
+                </div>
+                <div class="image-container">
+                    <img src="images/tec3/2-1.png" alt="左下の画像">
+                </div>
+            </div>
+            <div class="right-column">
+                <div class="image-container">
+                    <img src="images/tec3/2-2.png" alt="右側全体の画像">
+                </div>
+            </div>
+        </div>
+        </div>
+        
+
+
+
+        <div class="section fade-text">
+            <h2>牛の位置特定</h2>
+            <p>牛の活動量データを牛舎内に設置されたデータ受信器（受信機）に送信する際の電波強度を集約し、機械学習により牛の位置情報を特定する仕組みを構築した（特許出願済）。
+            </p>
+            
+            <div class="image-container">
+                <img src="images/tec3/3.png" alt="新しい画像の説明">
+            </div>
+            <a href="tec4.html">特許</a>
+        </div>
+
+        
+        <div class="section fade-text">
+            <h2>個体位置の表示</h2>
+            <p>各個体は認識された区画内にアイコンで表示される。
+            </p>
+            
+            <div class="image-container">
+                <img src="images/tec3/4.png" alt="新しい画像の説明">
+            </div>
+        </div>
+
+        <div class="section fade-text">
+            <h2>ハードナビゲーターを利用しない乳房炎発症予測</h2>
+            <h4>乳房炎発症予測</h4>
+            <p>機械学習を用いて、電気伝導度から乳房炎の発症を予測するモデルを生成した
+            </p>
+            
+            <div class="image-container">
+                <img src="images/tec3/5.png" alt="新しい画像の説明">
+            </div>
+        </div>
+
+
+        <div class="section fade-text">
+            <h2>乳房炎発症予測レポート</h2>
+            <p>電気伝導度から乳房炎を検知するモデルを基に、オンラインで閲覧できる乳房炎リスク評価レポートを自動生成する仕組みを構築した。
+            </p>
+            
+            <div class="image-container">
+                <img src="images/tec3/6.png" alt="新しい画像の説明">
+            </div>
+        </div>
+
+        
+
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeTextElements = document.querySelectorAll('.fade-text');
+            
+            fadeTextElements.forEach(function(element, index) {
+                setTimeout(function() {
+                    element.classList.add('visible');
+                }, index * 300); // 各要素を500ms間隔で表示
+            });
+        });
+    </script>
+</body>
+</html>

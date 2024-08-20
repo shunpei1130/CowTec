@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CowTech株式会社 - 会社概要</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1.5s ease, transform 0.5s ease;
+        }
+    
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        body {
+            font-family: 'Noto Serif JP', serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        header {
+            position: relative;
+            height: 827px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .slideshow img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .slideshow img.active {
+            opacity: 1;
+        }
+        .header-content {
+            margin-top: 245px;
+            text-align: center;
+            color: #ffffff;
+            z-index: 10;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        nav {
+            background: rgba(53, 66, 74, 0.8);
+            color: #000000;
+            padding: 5px 0;
+            width: 100%;
+        }
+        nav ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            margin: 0;
+        }
+        nav li {
+            display: inline;
+            margin: 0 5px;
+        }
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 5px 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: #0077be;
+            color: #ffffff;
+            border-radius: 3px;
+        }
+        .section {
+            background: #ffffff;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .section h2 {
+            color: #0077be;
+        }
+        .section-content {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .section-text {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .section-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            max-width: 400px;
+            max-height: 300px;
+        }
+        .section-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .reverse {
+            flex-direction: row-reverse;
+        }
+        .reverse .section-text {
+            padding-right: 0;
+            padding-left: 20px;
+        }
+        .company-overview {
+            background-color: #f0f8ff;
+            border: 2px solid #0077be;
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .company-overview h2 {
+            color: #0077be;
+            border-bottom: 2px solid #0077be;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .company-overview dl {
+            display: grid;
+            grid-template-columns: max-content auto;
+            gap: 10px 20px;
+        }
+        .company-overview dt {
+            font-weight: bold;
+            color: #0077be;
+        }
+        .company-overview dd {
+            margin: 0;
+        }
+        footer {
+            background: #35424a;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .section-content {
+                flex-direction: column;
+            }
+            .section-text, .reverse .section-text {
+                padding: 0;
+                margin-bottom: 20px;
+            }
+            .section-image {
+                max-width: 100%;
+                height: auto;
+            }
+            .company-overview dl {
+                grid-template-columns: 1fr;
+            }
+            .company-overview dt {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="service.html">サービス</a></li>
+                    <li><a href="technology.html">技術</a></li>
+                    <li><a href="company.html">会社案内</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="slideshow">
+            <img src="images/company/top1.jpg" alt="Slide 1" class="active">
+            <img src="images/company/top2.jpg" alt="Slide 2">
+            <img src="images/company/top3.jpg" alt="Slide 3">
+        </div>
+        <div class="header-content">
+            <h1>CowTech株式会社</h1>
+            <p>畜産農家のための東京理科大学発ベンチャー</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="section company-overview">
+            <h2>会社概要</h2>
+            <dl>
+                <dt>会社名</dt>
+                <dd>CowTech株式会社</dd>
+                <dt>設立</dt>
+                <dd>2021年4月2日</dd>
+                <dt>事業内容</dt>
+                <dd>AI・ビッグデータ技術による乳牛の飼養管理システムの開発など</dd>
+                <dt>住所</dt>
+                <dd>〒278-8510 千葉県野田市山崎2641</dd>
+                <dt>メールアドレス</dt>
+                <dd><a href="mailto:info@cowtech.co.jp">info@cowtech.co.jp</a></dd>
+            </dl>
+        </section>
+
+        <section class="section">
+            <h2>創業者あいさつ「大学発ベンチャー企業の役割」</h2>
+            <div class="section-content">
+                <div class="section-text">
+                    <p>2022年9月27日付で「CowTech株式会社」は東京理科大学発ベンチャー企業に認定されました。具体的には、乳牛を飼育している酪農場にセンサーデバイスを導入し、個体に関するデータを取得、AIによって解析するシステムを構築します。</p>
+                    <p>これらのAI技術とビックデータ処理技術から革新的なスマート酪農を実現し、酪農経営を戦力的に進展させ、酪農DXを実現していきます。今後は研究成果で得られたデバイスやシステムを現地に事業展開していく予定です。</p>
+                    <p>（東京理科大学　創域理工学部 経営システム工学科 教授 大和田 勇人）</p>
+                </div>
+                <div class="section-image">
+                    <img src="images/company/oowada.jpg" alt="創業者写真">
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>事業内容</h2>
+            <div class="section-content reverse">
+                <div class="section-text">
+                    <p>AI技術とビッグデータ処理による革新的なスマート農業を実現。酪農に限らず対象領域を拡大し、畜産経営を戦略的に進展させ、畜産デジタルトランスフォーメーションを実現します。</p>
+                    <ul>
+                        <li>乳牛関連：飼養管理高度化システム（サービス提供中）</li>
+                        <li>肉牛関連：飼養管理システム（研究中）</li>
+                        <li>馬関連：分娩予測システム（研究中）</li>
+                        <li>畜産6次産業化促進支援：特産物の販売支援（実証実験中）</li>
+                    </ul>
+                </div>
+                <div class="section-image">
+                    <img src="images/company/cow.png" alt="事業イメージ">
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>これまでの産官学連携事業</h2>
+            <div class="section-content">
+                <div class="section-text">
+                    <ul>
+                        <li>農林水産省「革新的技術開発・緊急展開事業（うち先導プロジェクト）」（2016・2017年度）</li>
+                        <li>農林水産省「革新的技術開発・緊急展開事業（うち地域プロジェクト）」（2015年度）</li>
+                        <li>農林水産省「革新的技術開発・緊急展開事業（うち研究ネットワーク形成事業）」（2016年度）</li>
+                        <li>日本中央競馬会畜産新興事業「哺乳牛と搾乳牛のトレーサビリティの高度化」（2018年度）</li>
+                    </ul>
+                </div>
+                <div class="section-image">
+                    <img src="images/company/cow2.png" alt="産官学連携イメージ">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Copyright © CowTech Inc. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const slides = document.querySelectorAll('.slideshow img');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(nextSlide, 3500); // 5秒ごとに画像を切り替え
+
+        const serviceItems = document.querySelectorAll('.section');
+    
+        function checkVisibility() {
+            serviceItems.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    item.classList.add('visible');
+                }
+            });
+        }
+    
+        window.addEventListener('scroll', checkVisibility);
+    
+        // ページロード時にもチェック
+        checkVisibility();
+    });
+    </script>
+</body>
+</html>

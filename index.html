@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CowTech株式会社 - 畜産DXを推進する東京理科大学発ベンチャー</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif JP', serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        header {
+            background-image: url('oowada1.jpg');
+            background-size: cover;
+            min-height: 825px;
+            border-bottom: #0077be 3px solid;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            transition: background-image 1s ease-in-out;
+        }
+        header h1 {
+            margin: 185px 0 0 0;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        header p {
+            margin: 20px 0;
+            font-size: 1.5em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        nav {
+            background: rgba(53, 66, 74, 0.8);
+            color: #000000;
+            padding: 5px 0;
+            width: 100%;
+        }
+        nav ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            margin: 0;
+        }
+        nav li {
+            display: inline;
+            margin: 0 5px;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #0077be;
+            border-radius: 3px;
+        }
+        .highlight {
+            background: rgba(0, 119, 190, 0.8);
+            color: #ffffff;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .news {
+            background: #ffffff;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: #0077be 5px solid;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        footer {
+            background: #35424a;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        #fading-text {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 2s ease-out, transform 2s ease-out;
+        }
+        #fading-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="#home">ホーム</a></li>
+                    <li><a href="service.html">サービス</a></li>
+                    <li><a href="technology.html">技術</a></li>
+                    <li><a href="company.html">会社案内</a></li>
+                </ul>
+            </div>
+        </nav>
+        <h1 id="typing-text" data-text="CowTech株式会社"></h1>
+        <p id="fading-text">東京理科大学発ベンチャー - 畜産農家のための技術革新</p>
+    </header>
+
+    <div class="container">
+        <div class="highlight">
+            <h2>酪農ビッグデータの高度活用技術 & AIの活用で生産性を向上</h2>
+            <p>～ 当社は畜産DXを推進します ～</p>
+        </div>
+
+        <div class="news">
+            <h3>お知らせ</h3>
+            <p>2023/6/30 - ホームページをリニューアルしました。</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright © CowTech Inc. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const images = [
+            'url("oowada1.jpg")',
+            'url("oowada2.jpg")',
+            'url("oowada3.jpg")'
+        ];
+
+        let currentImageIndex = 0;
+
+        function changeBackgroundImage() {
+            const header = document.getElementById('header');
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            header.style.backgroundImage = images[currentImageIndex];
+        }
+
+        setInterval(changeBackgroundImage, 4000);
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const typingTextElement = document.getElementById('typing-text');
+            const text = typingTextElement.getAttribute('data-text');
+            const textLength = text.length;
+            const typingSpeed = 2000 / textLength;
+        
+            let index = 0;
+        
+            function typeCharacter() {
+                if (index < textLength) {
+                    typingTextElement.textContent += text[index];
+                    index++;
+                    setTimeout(typeCharacter, typingSpeed);
+                }
+            }
+        
+            typeCharacter();
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadingTextElement = document.getElementById('fading-text');
+            setTimeout(function() {
+                fadingTextElement.classList.add('visible');
+            }, 100);
+        });
+    </script>
+</body>
+</html>
