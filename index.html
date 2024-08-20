@@ -32,6 +32,21 @@
             text-align: center;
             transition: background-image 1s ease-in-out;
         }
+        @media only screen and (max-width: 600px) {
+    header h1 {
+        margin: 100px 0 0 0; /* 上部マージンを小さくする */
+        font-size: 2em /* フォントサイズを小さくする */ !important;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* テキストシャドウを控えめに */
+        font-weight: 700;
+    }
+}
+/* スマホ用のスタイル */
+@media only screen and (max-width: 600px) {
+    nav a {
+        font-size: 12px !important; /* フォントサイズを少し小さく */
+  
+    }
+}
         header h1 {
             margin: 185px 0 0 0;
             font-size: 3em;
