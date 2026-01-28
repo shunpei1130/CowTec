@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クラスカースト表 - 学校裏サイト風</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-y: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff4081;
+            text-shadow: 0 0 10px #ff4081;
+            margin-bottom: 40px;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #ff4081; }
+            to { text-shadow: 0 0 15px #ff4081; }
+        }
+
+        .caste-pyramid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            max-width: 800px;
+            margin-bottom: 50px;
+        }
+
+        .level {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .level:hover {
+            transform: scale(1.05);
+        }
+
+        .person {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 15px 25px;
+            margin: 0 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .person:hover {
+            background-color: #333;
+            box-shadow: 0 6px 12px rgba(255, 64, 129, 0.3);
+        }
+
+        .level-1 { width: 20%; }
+        .level-2 { width: 40%; }
+        .level-3 { width: 60%; }
+        .level-4 { width: 80%; }
+        .level-5 { width: 100%; }
+
+        .details-section {
+            width: 80%;
+            max-width: 800px;
+            margin-bottom: 50px;
+        }
+
+        .detail-item {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .detail-item h3 {
+            margin-top: 0;
+            color: #ff4081;
+        }
+
+        .detail-item p {
+            margin: 10px 0;
+        }
+
+        .reproduce-btn {
+            padding: 15px 30px;
+            background-color: #ff4081;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(255, 64, 129, 0.5);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .reproduce-btn:hover {
+            background-color: #d81b60;
+            transform: translateY(-3px);
+        }
+
+        .reproduce-btn:active {
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+<body>
+    <h1>クラスカーストピラミッド</h1>
+    <div class="caste-pyramid">
+        <!-- トップレベル: 王様/女王 -->
+        <div class="level level-1">
+            <div class="person">1位: 田中太郎 (王様)</div>
+        </div>
+        <!-- 上位レベル -->
+        <div class="level level-2">
+            <div class="person">2位: 鈴木花子</div>
+            <div class="person">3位: 佐藤次郎</div>
+        </div>
+        <!-- 中間レベル -->
+        <div class="level level-3">
+            <div class="person">4位: 山田三郎</div>
+            <div class="person">5位: 伊藤四子</div>
+            <div class="person">6位: 渡辺五郎</div>
+        </div>
+        <!-- 下位レベル -->
+        <div class="level level-4">
+            <div class="person">7位: 高橋六子</div>
+            <div class="person">8位: 中村七郎</div>
+            <div class="person">9位: 小林八子</div>
+            <div class="person">10位: 加藤九郎</div>
+        </div>
+        <!-- ボトムレベル -->
+        <div class="level level-5">
+            <div class="person">11位: 斎藤十子</div>
+            <div class="person">12位: 木村十一郎</div>
+            <div class="person">13位: 林十二子</div>
+            <div class="person">14位: 清水十三郎</div>
+            <div class="person">15位: 森十四子</div>
+        </div>
+    </div>
+
+    <div class="details-section">
+        <h2 style="text-align: center; color: #ff4081; margin-bottom: 30px;">各人の詳細と理由</h2>
+        <div class="detail-item">
+            <h3>1位: 田中太郎</h3>
+            <p>点数: 95/100</p>
+            <p>理由: クラスで一番の人気者。スポーツ万能でいつもみんなを笑わせる。自然と周りが集まるカリスマ性がある。</p>
+        </div>
+        <div class="detail-item">
+            <h3>2位: 鈴木花子</h3>
+            <p>点数: 90/100</p>
+            <p>理由: 美人で頭もいい。SNSでフォロワー多数。イベントの中心人物で、みんなの憧れの存在。</p>
+        </div>
+        <div class="detail-item">
+            <h3>3位: 佐藤次郎</h3>
+            <p>点数: 85/100</p>
+            <p>理由: ユーモアセンス抜群で、友達が多い。部活のエースで、信頼されている。</p>
+        </div>
+        <div class="detail-item">
+            <h3>4位: 山田三郎</h3>
+            <p>点数: 80/100</p>
+            <p>理由: 勉強が得意で、みんなに教えてくれる。穏やかな性格で、トラブルを解決する役割。</p>
+        </div>
+        <div class="detail-item">
+            <h3>5位: 伊藤四子</h3>
+            <p>点数: 78/100</p>
+            <p>理由: ファッションセンスがいい。グループのムードメーカーで、楽しい話題を提供。</p>
+        </div>
+        <div class="detail-item">
+            <h3>6位: 渡辺五郎</h3>
+            <p>点数: 75/100</p>
+            <p>理由: ゲーム上手で、休み時間にみんなと遊ぶ。頼りになる兄貴分。</p>
+        </div>
+        <div class="detail-item">
+            <h3>7位: 高橋六子</h3>
+            <p>点数: 70/100</p>
+            <p>理由: 芸術系で才能あり。でも少し内気。友達は少ないが、尊敬されている。</p>
+        </div>
+        <div class="detail-item">
+            <h3>8位: 中村七郎</h3>
+            <p>点数: 65/100</p>
+            <p>理由: 普通にいい人だが、目立たない。時々面白いことを言う。</p>
+        </div>
+        <div class="detail-item">
+            <h3>9位: 小林八子</h3>
+            <p>点数: 60/100</p>
+            <p>理由: 勉強はできるが、社交性が低い。グループ外れ気味。</p>
+        </div>
+        <div class="detail-item">
+            <h3>10位: 加藤九郎</h3>
+            <p>点数: 55/100</p>
+            <p>理由: 遅刻が多い。友達はいるが、信頼が薄い。</p>
+        </div>
+        <div class="detail-item">
+            <h3>11位: 斎藤十子</h3>
+            <p>点数: 50/100</p>
+            <p>理由: 噂好きで、時々トラブルを起こす。避けられがち。</p>
+        </div>
+        <div class="detail-item">
+            <h3>12位: 木村十一郎</h3>
+            <p>点数: 45/100</p>
+            <p>理由: ぼんやりしていて、会話が続かない。孤立しやすい。</p>
+        </div>
+        <div class="detail-item">
+            <h3>13位: 林十二子</h3>
+            <p>点数: 40/100</p>
+            <p>理由: 態度が悪く、みんなに嫌がられる。喧嘩っ早い。</p>
+        </div>
+        <div class="detail-item">
+            <h3>14位: 清水十三郎</h3>
+            <p>点数: 35/100</p>
+            <p>理由: いつも一人でいる。話しかけにくい雰囲気。</p>
+        </div>
+        <div class="detail-item">
+            <h3>15位: 森十四子</h3>
+            <p>点数: 30/100</p>
+            <p>理由: クラスで浮いている。変わった趣味が多く、理解されにくい。</p>
+        </div>
+    </div>
+
+    <button class="reproduce-btn" onclick="sendEmail()">あなたのクラスで再現する</button>
+
+    <script>
+        function sendEmail() {
+            const subject = encodeURIComponent("クラスカースト表の再現依頼");
+            const body = encodeURIComponent("私のクラスのカースト表を作成してください。以下に名前と順位を記入します：\n\n[ここにあなたのクラスの情報を入力]");
+            window.location.href = `mailto:s.hasegawa1130@gmail.com?subject=${subject}&body=${body}`;
+        }
+    </script>
+</body>
+</html>
